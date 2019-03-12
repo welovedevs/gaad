@@ -24,6 +24,7 @@ export default ({
 		width: 140,
 		borderRadius: 100,
 		marginBottom: 50,
+		boxShadow: '0 28px 45px rgba(29,29,31,0.2)',
 		backgroundImage: 'linear-gradient(to right top, rgb(17, 90, 117), rgb(42, 115, 142), rgb(67, 140, 167), rgb(92, 165, 192), rgb(117, 190, 217))',
 		'& > svg': {
 			height: 45,
