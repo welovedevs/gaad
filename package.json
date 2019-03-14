@@ -29,7 +29,7 @@
 			"respinner": "3.0.1"
 		},
 		"scripts": {
-				"dev": "react-scripts start",
+				"dev": "BROWSER=none react-scripts start",
 				"build": "react-scripts build",
 				"test": "react-scripts test",
 				"eject": "react-scripts eject"

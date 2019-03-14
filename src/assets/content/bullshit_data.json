@@ -1,0 +1,19 @@
+{
+  "scenario1": {
+    text: [
+      "Cher/Chère {replaceName}, j'ai vu que vous étiez a l'écoute du marché",
+      "Mon client, spécialiste de la grande distribution, est à la recherche de développeurs experts pour une gestion pointue de son SI",
+      "J'ai pu remarquer sur votre profil viadeo que votre expertise en AS400 serait d'une grande valeur pour aider à sa transformation digitale",
+      "Seriez-vous intéressé de rejoindre mon client dans le cadre projets valorisants en équipe à taille humaine et  à dimension Européenne ?",
+      "Je fais appel à votre expertise, mais si vous avez dans votre réseau une personne susceptible d'être intéressée par ce type d'opportunités, je vous serai très reconnaissant de me mettre en contact avec eux ! ",
+      "Ma démarche reste strictement confidentielle",
+      "Je vous remercie par avance pour votre aide",
+      "[Votre Nom]",
+      "[Votre Poste] , [Votre Entreprise]"
+    ],
+    "images": {
+      'image1': '',
+      'image2': ''
+    }
+  }
+}

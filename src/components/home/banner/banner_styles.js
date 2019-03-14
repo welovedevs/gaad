@@ -73,5 +73,10 @@ export default ({
 		subTitle: {
 			fontSize: 16
 		}
+	},
+	small: {
+		height: 250,
+		justifyContent: 'space-evenly',
+		flexDirection: 'row'
 	}
 });
