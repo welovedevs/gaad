@@ -8,25 +8,9 @@ import { Loading } from '../loading/loading';
 export default () => (
 	<div>
 		<Switch>
-			<Route
-				exact
-				path="/result/:hash"
-				component={Results}
-			/>
-			<Route
-				exact
-				path="/generate"
-				component={Loading}
-			/>
-			<Route
-				exact
-				path="/"
-				component={Home}
-			/>
-			<Redirect
-				from="*"
-				to="/"
-			/>
+			<Route exact path="/result/:hash" component={Results} />
+			<Route exact path="/" component={Home} />
+			<Redirect from="*" to="/" />
 		</Switch>
 	</div>
 );

@@ -1,35 +1,36 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,600,700,800,900');
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,600,700,800,900");
 
-html,body {
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	background-color: #f5f5f5;
-	font-family: "Roboto", "open sans", "Arial";
-	font-weight: 400;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #efefef;
+  font-family: "Roboto", "open sans", "Arial";
+  font-weight: 400;
 }
 
 #root {
-	background-color: #efefef;
-	animation: fade-in 1s ease;
+  background-color: #efefef;
+  animation: fade-in 1s ease;
 }
 
 * {
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 a {
-	textDecoration: none !important;
+  text-decoration: none !important;
 }
 
 *:focus {
-	outline: none;
+  outline: none;
 }
 
-[contenteditable=true]:empty:before{
+[contenteditable="true"]:empty:before {
   content: attr(placeholder);
   display: block;
-	color: #8e8e8e
+  color: #8e8e8e;
 }
