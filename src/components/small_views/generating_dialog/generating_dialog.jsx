@@ -12,6 +12,8 @@ import Button from '@material-ui/core/Button';
 
 import phrases from '../../../assets/content/loading_phrases.json';
 
+import { generateRandomHash } from '../../../utils/main_utils';
+
 import styles from './generating_dialog_styles';
 
 const getRandomColor = () => {
@@ -26,14 +28,14 @@ const getRandomPhrase = () =>
 	phrases[Math.floor(Math.random() * phrases.length)];
 
 const GeneratingDialog = ({
-	open, history, classes, ...other
+	open, name, technology, history, classes, ...other
 }) => {
 	const [progress, setProgress] = useState(3);
 	const [phrase, setPhrase] = useState(getRandomPhrase());
 
 	useEffect(
 		() => {
-			if (!open) return;
+			if (!open || progress === 100) return;
 			const tick = () => {
 				const time = (Math.floor(Math.random() * 25) + 10) * 100;
 				const newProgress = Math.min(
@@ -42,9 +44,10 @@ const GeneratingDialog = ({
 				);
 				if (newProgress === 100) {
 					setProgress(100);
-					setPhrase(' Nous avons trouvé votre approche parfaite !');
+					setPhrase('Nous avons trouvé votre approche parfaite !');
+					const hash = generateRandomHash({ name, technology });
 					return setTimeout(() => {
-						history.push('/result/abc');
+						history.push(`/result/${hash}`);
 					}, 3000);
 				}
 				setTimeout(() => {
@@ -54,7 +57,7 @@ const GeneratingDialog = ({
 			};
 			tick();
 		},
-		[progress, open]
+		[progress, open, name, technology]
 	);
 
 	return (
@@ -63,7 +66,6 @@ const GeneratingDialog = ({
 				paper: classes.paper
 			}}
 			{...{ open }}
-			{...other}
 			onClose={() => {
 				setProgress(3);
 				if (other.onClose) {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 
 import injectSheet from 'react-jss';
 
@@ -11,33 +11,55 @@ import GeneratingDialog from '../../small_views/generating_dialog/generating_dia
 import styles from './approach_card_styles';
 
 const ApproachCard = ({ classes }) => {
-	const [firstName, setFirstName] = useState('');
-	const [technologies, setTechnologies] = useState('');
+	const [name, setName] = useState('');
+	const [technology, setTechnology] = useState('');
+	const [error, setError] = useState(null);
 	const [openGeneratingDialog, setGeneratingDialogOpenState] = useState(false);
+	const handleButtonClick = useCallback(() => {
+		if (!name && !technology) {
+			return setError('Vous devez indiquer un nom et la technologie qui vous intéresse !');
+		}
+		if (!name) {
+			return setError('Vous devez indiquer un nom !');
+		}
+		if (!technology) {
+			return setError('Vous devez indiquer la technologie qui vous intéresse !');
+		}
+		return setGeneratingDialogOpenState(true);
+	}, [name, technology]);
 	return (
 		<>
 			<GeneratingDialog
 				open={openGeneratingDialog}
 				onClose={() => setGeneratingDialogOpenState(false)}
+				{...{
+					name,
+					technology
+				}}
 			/>
 			<GenericCard className={classes.container}>
+				{error && (
+					<span className={classes.error}>
+						{error}
+					</span>
+				)}
 				<TextField
 					fullWidth
 					className={classes.textField}
 					label="Prénom"
-					value={firstName}
-					onChange={event => setFirstName(event.target.value)}
+					value={name}
+					onChange={event => setName(event.target.value)}
 				/>
 				<TextField
 					fullWidth
 					className={classes.textField}
-					label="Technologies"
-					value={technologies}
-					onChange={event => setTechnologies(event.target.value)}
+					label="Technology"
+					value={technology}
+					onChange={event => setTechnology(event.target.value)}
 				/>
 				<Button
 					className={classes.button}
-					onClick={() => setGeneratingDialogOpenState(true)}
+					onClick={handleButtonClick}
 				>
 					{'Générer mon approche'}
 				</Button>

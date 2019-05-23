@@ -1,19 +1,105 @@
 {
-  "scenario1": {
-    text: [
-      "Cher/Chère {replaceName}, j'ai vu que vous étiez a l'écoute du marché",
-      "Mon client, spécialiste de la grande distribution, est à la recherche de développeurs experts pour une gestion pointue de son SI",
-      "J'ai pu remarquer sur votre profil viadeo que votre expertise en AS400 serait d'une grande valeur pour aider à sa transformation digitale",
-      "Seriez-vous intéressé de rejoindre mon client dans le cadre projets valorisants en équipe à taille humaine et  à dimension Européenne ?",
-      "Je fais appel à votre expertise, mais si vous avez dans votre réseau une personne susceptible d'être intéressée par ce type d'opportunités, je vous serai très reconnaissant de me mettre en contact avec eux ! ",
-      "Ma démarche reste strictement confidentielle",
-      "Je vous remercie par avance pour votre aide",
-      "[Votre Nom]",
-      "[Votre Poste] , [Votre Entreprise]"
-    ],
-    "images": {
-      'image1': '',
-      'image2': ''
-    }
-  }
+	"scenario1": {
+		"text": [
+			"Cher/Chère {replaceName}, j'ai vu que vous étiez a l'écoute du marché.",
+			"",
+			"Mon client, spécialiste de la grande distribution, est à la recherche de développeurs experts pour une gestion pointue de son SI.",
+			"",
+			"J'ai pu remarquer sur votre profil viadeo que votre expertise en AS400 serait d'une grande valeur pour aider à sa transformation digitale.",
+			"Seriez-vous intéressé de rejoindre mon client dans le cadre projets valorisants en équipe à taille humaine et  à dimension Européenne ?",
+			"Je fais appel à votre expertise, mais si vous avez dans votre réseau une personne susceptible d'être intéressée par ce type d'opportunités, je vous serai très reconnaissant de me mettre en contact avec eux !",
+			"",
+			"Ma démarche reste strictement confidentielle.",
+			"",
+			"Je vous remercie par avance pour votre aide,",
+			"[Votre Nom]",
+			"[Votre Poste], [Votre Entreprise]"
+		]
+	},
+	"scenario2": {
+		"text": [
+			"Bonjour {replaceName},",
+			"",
+			"[Votre poste] au sein de [Votre entreprise], je me permets de vous contacter suite à la découverte de votre profil sur Linkedin.",
+			"Je recherche actuellement un Spark engineer afin de faire grandir notre équipe Infra et d’accompagner nos clients, c’est pourquoi votre expérience chez [Entreprise] m’intéresse.",
+			"Pour faire simple, nous sommes à la recherche d’une personne ayant de solides compétences en systèmes de stockage de données (MapReduce, MongoDb,..) et une expérience dans l’utilisation de systèmes de donnés (Hadoop, Dataflow,…).",
+			"En tant que partenaire privilégié de AWS, nous accompagnons nos clients autour de leurs sujets liés au Cloud.",
+			"A Lyon, nous sommes 35 consultants et notre métier est de développer des applications à fortes valeurs ajoutées pour les entreprises de la région.",
+			"On travaille sur des technologies innovantes, au travers du cloud de Amazon notamment, on participe à différents évènements où vous nous avez peut-être croisés lors de Devoxx, Best Of Web, aux DevFest ou plus localement au GDG de Lyon ou au JUG ou nous intervenons en tant que speaker également.",
+			"On donne des formations gratuites  sur Angular, Handlebar, Python, R et d’autres.",
+			"Nos Soiriens, à travers les Brackets testent techniquement chaque candidat durant 3 heures en pair programming, on organise de nombreux meetups en interne, en un mot … on partage nos connaissances et nos expériences !",
+			"",
+			"Si cela vous intéresse, n’hésitez pas à revenir vers moi afin qu’on échange davantage,",
+			"",
+			"Belle journée,",
+			"",
+			"[Votre Nom]",
+			"[Votre Poste], [Votre Entreprise]"
+		]
+	},
+	"scenario3": {
+		"text": [
+			"Bonjour {replaceName}",
+			"",
+			"Votre experience en numérique a fortement attiré mon attention !",
+			"",
+			"J'ai vu que vous avez mentionné {tech} sur votre profil, vous devez donc forcément être l'expert que mon client recherche !",
+			"",
+			"Ce dernier, une start-up spécialisée en numérisation de procesus digitaux dans le domaine des medias, vient de lever 8 M d'euros et cherche à soutenir sa très forte croissance.",
+			"Vous intégrerez une équipe de codeur Ninjas tous specialisés en fullstack ! Le CTO est d'ailleurs un lead Cobol reconnu par la communauté.",
+			"",
+			"Souhaitez vous échanger immédiatement ? Le poste est à pourvoir de toute urgence !",
+			"",
+			"Cordialement,",
+			"[Votre Nom]"
+		]
+	},
+	"scenario4": {
+		"text": [
+			"Hello {replaceName} !",
+			"",
+			"Vos compétences en {tech} sont impressionantes et correspondent à ce que mon client recherche :)",
+			"",
+			"Il s'agit d'un job de rêve chez un éditeur reconnu, expert en digitalisation Omni-Canal dans le domaine de l'agriculture forestière ! Présent à l'international, mon client réalise un CA de +10M/an et compte aujourd'hui 140 salariés.",
+			"Ce poste de développeur Ninja Fullstack démarre à 22K€ mais présente des opportunités d'évolutions imbatable sur le marché ! Serez-vous leur prochain CTO dans 12 ans ? Cela ne tient qu'à vous !",
+			"",
+			"J'espère que vous êtes à l'écoute du marché car je dois toucher ma commission au plus vite.",
+			"",
+			"Bien à vous,",
+			"[Votre Nom]"
+		]
+	},
+	"scenario5": {
+		"text": [
+			"Coucou {replaceName} !",
+			"",
+			"A la vue de ton exertise en {tech} tu es la perle rare que mon client peine à trouver depuis 10 mois.",
+			"",
+			"Ce dernier est un groupe à ambition internationale spécialisé dans la virtualisation et la digitalisation de données BIG DATA issues de MachineLearning !",
+			"L'équipe est composée de véritables Rock-star du code fullstack et ton profil viendrait la compléter à merveille !",
+			"",
+			"Les locaux sont idéalement situés (si vous avez une voiture) et il y a même un borne d'arcade rétro Street Fighter :D",
+			"",
+			"Dis moi que tu es à l'écoute du marché stp !",
+			"",
+			"Cheers,",
+			"[Votre Nom]"
+		]
+	},
+	"scenario6": {
+		"text": [
+			"Bonjour !",
+			"",
+			"J'ai vu {tech} dans la liste des 37 languages informatiques que vous maitrisez et je me permet ainsi de vous contacter :)",
+			"",
+			"Cette expertise qui est la votre correspond parfaitement au poste de dev fullstack Rockstar junior à pourvoir chez mon client !",
+			"Ce dernier est une startup crowdfondée il y a 1 an, spécialisée en optimisation digitale de contenus numériques dediés à la jeunesse.",
+			"",
+			"En attente d'une levée de fonds importante, vous serez payés dans un premier temps en parts BSPCE extêmement avantageuses !",
+			"",
+			"Appellons nous au plus vite ! ",
+			"",
+			"[Votre Nom]"
+		]
+	}
 }
