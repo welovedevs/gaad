@@ -55,5 +55,17 @@ export default {
 		boxShadow: '0 20px 67px 0 rgba(0,0,0,.3)',
 		animation: 'fade-in-translate-low 1500ms',
 		animationFillMode: 'forwards'
+	},
+	shareIcons: {
+		width: '100%',
+		display: 'flex',
+		justifyContent: 'center',
+		marginTop: 30,
+		'& > *': {
+			margin: 10
+		}
+	},
+	socialIcon: {
+		marginRight: 10
 	}
 };

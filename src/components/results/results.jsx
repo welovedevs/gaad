@@ -4,12 +4,26 @@ import { withRouter } from 'react-router-dom';
 import injectSheet from 'react-jss';
 import queryString from 'query-string';
 
+import { TwitterOutline, FacebookFill, LinkedinFill } from '@ant-design/icons';
+import AntdIcon from '@ant-design/icons-react';
+
+import Button from '@material-ui/core/Button';
+
 import Banner from '../home/banner/banner';
 import GenericCard from '../small_views/generic_card/generic_card';
 
 import { generateScenarioWithValues } from '../../utils/main_utils';
 
 import styles from './results_styles';
+
+const ROOT_URL = 'https://gaad.welovedevs.com';
+
+const getSocialLink = (type, hash) => {
+	switch (type) {
+		case 'twitter':
+			return `https://www.twitter.com/home?${queryString.stringify({ status: `Je viens de créer ma meilleur approche développeur ! ${ROOT_URL}/results/${hash}` })}`
+	}
+}
 
 const ResultsComponent = ({ classes, match }) => {
 	const getText = useCallback(
@@ -40,6 +54,11 @@ const ResultsComponent = ({ classes, match }) => {
 				<GenericCard className={classes.resultCard}>
 					<ResultText text={text.current} {...{ classes }} />
 					<ResultImages images={images.current} {...{ classes }} />
+					<ShareIcons
+						text={text.current}
+						hash={match && match.params && match.params.hash}
+						{...{ classes }}
+					/>
 				</GenericCard>
 			</div>
 		</div>
@@ -80,6 +99,48 @@ const ResultImages = ({ images, classes }) => {
 					}}
 				/>
 			))}
+		</div>
+	);
+}
+
+const ShareIcons = ({ text, hash, classes }) => {
+	if (!text || !hash || !classes) {
+		return null;
+	}
+	return (
+		<div className={classes.shareIcons}>
+			<a href={getSocialLink('twitter', hash)}>
+				<Button
+					color="primary"
+					variant="outlined"
+				>
+					<AntdIcon
+						className={classes.socialIcon}
+						type={TwitterOutline}
+					/>
+					{'Twitter'}
+				</Button>
+			</a>
+			<Button
+				color="primary"
+				variant="outlined"
+			>
+				<AntdIcon
+					className={classes.socialIcon}
+					type={FacebookFill}
+				/>
+				{'Facebook'}
+			</Button>
+			<Button
+				color="primary"
+				variant="outlined"
+			>
+				<AntdIcon
+					className={classes.socialIcon}
+					type={LinkedinFill}
+				/>
+				{'LinkedIn'}
+			</Button>
 		</div>
 	);
 }
