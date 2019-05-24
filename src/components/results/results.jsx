@@ -137,6 +137,7 @@ const ResultImages = ({ images, classes }) => {
 	}
 	return (
 		<div className={classes.images}>
+			<div className={classes.imagesTitle}>Suggestions d'images pertinantes pour votre approche</div>
 			{images.map((url, index) => (
 				<img
 					className={classes.image}

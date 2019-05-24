@@ -45,6 +45,12 @@ export default {
 		justifyContent: 'center',
 		flexWrap: 'wrap'
 	},
+	imagesTitle: {
+		width: '100%',
+		textAlign: 'center',
+		fontWeight: '600',
+		padding: '20px'
+	},
 	image: {
 		height: 200,
 		width: 200,

@@ -10,19 +10,19 @@ import styles from './values_propositions_styles';
 
 const columns = [
 	{
-		title: 'Made with ❤️ in Lille',
-		description: 'Velit irure minim proident laboris cillum ex in dolor nostrud excepteur ea ad excepteur commodo. Duis reprehenderit irure nostrud veniam irure sint cillum labore ut est officia consequat laborum voluptate nostrud id laboris. Magna elit culpa proident nostrud nulla et consequat in ea enim aliquip do irure id deserunt nulla. Sunt nulla enim cupidatat exercitation eu duis culpa. Nisi reprehenderit quis ex minim veniam enim deserunt fugiat tempor ut aute in ullamco officia.',
+		title: 'Faite bonne impression',
+		description: 'Les chercheurs américains sont formels : Ils est extrèmement important de faire une bonne première impression pour recruter. Nous avons étudié les développeurs plusieurs années pour concevoir ce générateur basé sur du machine learning.',
+		icon: <AntdIcon type={SearchOutline} />
+	},
+	{
+		title: 'Précision maximale',
+		description: "Quoi de pire qu\'un mauvais prénom sur un message d'approche ? Avec GAAD c'est fini, les textes sont précis, éfficaces et surtout sans langue de bois ! Les développeurs n'attendent plus que vous !",
 		icon: <AntdIcon type={HomeFill} />
 	},
 	{
-		title: 'Technically impressive',
-		description: 'Duis cillum incididunt incididunt nulla ex quis esse eiusmod nisi fugiat. Nisi duis duis dolor eiusmod irure commodo ad. In laboris culpa consequat labore enim est laborum cupidatat irure nostrud mollit et irure. Ea mollit ullamco occaecat nostrud id enim incididunt eu commodo. Cupidatat excepteur et laboris sint excepteur sint nisi ut minim pariatur.',
+		title: 'Générateur d\'image',
+		description: 'Comme le dit Confucius: Une image vaut mille mots. C\'est pourquoi nous avons sélectionné des images libres de droits parfaites pour aider vos futurs candidats à se projeter dans votre entreprise !',
 		icon: <AntdIcon type={ExperimentFill} />
-	},
-	{
-		title: 'Top-notch accuracy',
-		description: 'Irure nisi consequat sit voluptate esse exercitation ea sunt esse anim dolor nulla incididunt amet veniam elit eiusmod. Veniam Lorem laborum deserunt sunt ipsum cupidatat fugiat cillum esse proident ullamco aute tempor laboris. Esse quis consectetur minim mollit esse eiusmod consequat aliqua sit eu dolor ea ut sunt ad. Voluptate tempor laborum pariatur adipisicing non nulla dolore pariatur ad aliquip amet officia deserunt amet. Duis sit labore proident non magna qui non dolore ut. Excepteur eu dolore ut et quis ex occaecat pariatur deserunt. In fugiat et veniam laborum eiusmod velit pariatur officia ad qui veniam proident Lorem dolor exercitation.',
-		icon: <AntdIcon type={SearchOutline} />
 	}
 ]
 
