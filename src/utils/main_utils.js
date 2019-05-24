@@ -34,7 +34,9 @@ export const generateRandomHash = ({ name, technology }) => {
 			name: randomName,
 			scenarioId: randomScenario,
 			technology: randomTechnology,
-			images: randomImagesIndexes
+			images: randomImagesIndexes,
+			realName: name,
+			realTech: technology
 		}, { arrayFormat: 'comma' })
 	);
 };

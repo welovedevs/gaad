@@ -26,33 +26,36 @@ const ROOT_URL = 'https://gaad.welovedevs.com';
 const getSocialLink = (type, hash) => {
 	switch (type) {
 	case 'twitter':
-		return `https://www.twitter.com/home?${queryString.stringify({ status: `Je viens de créer ma meilleur approche développeur ! ${ROOT_URL}/results/${hash}` })}`;
+		return `https://www.twitter.com/home?${queryString.stringify({ status: `Je viens de créer ma meilleur approche développeur ! ${ROOT_URL}/result/${hash}` })}`;
 	case 'facebook':
-		return `https://www.facebook.com/sharer.php?s=100&p[url]=${ROOT_URL}/results/${hash}&p[title]=${encodeURIComponent('Je viens de créer ma meilleur approche développeur !')}`;
+		return `https://www.facebook.com/sharer.php?s=100&p[url]=${ROOT_URL}/result/${hash}&p[title]=${encodeURIComponent('Je viens de créer ma meilleur approche développeur !')}`;
 	case 'linkedin':
-		return `https://www.linkedin.com/sharing/share-offsite/?${queryString.stringify({ url: `${ROOT_URL}/results/${hash}` })}`;
+		return `https://www.linkedin.com/sharing/share-offsite/?${queryString.stringify({ url: `${ROOT_URL}/result/${hash}` })}`;
 	default: return null;
 	}
 }
 
 const ResultsComponent = ({ classes, match }) => {
-	const getText = useCallback(hash => hash && generateScenarioWithValues(queryString.parse(atob(hash))));
-	const getImages = useCallback((hash) => {
-		if (!hash) {
-			return null;
-		}
-		const parsed = queryString.parse(atob(hash), { arrayFormat: 'comma' });
-		return parsed && parsed.images && getImagesLinks({ imagesArray: parsed.images });
-	});
 	const hash = match && match.params && match.params.hash;
-	const text = useRef(getText(hash));
-	const images = useRef(getImages(hash));
+	const parsedHash = useRef(hash && queryString.parse(atob(hash), { arrayFormat: 'comma' }));
+	const text = useRef(parsedHash.current
+		&& generateScenarioWithValues(parsedHash.current));
+	const images = useRef(parsedHash.current
+		&& parsedHash.current.images
+		&& getImagesLinks({ imagesArray: parsedHash.current.images }));
+	const realName = useRef(parsedHash.current && parsedHash.current.realName);
+	const realTech = useRef(parsedHash.current && parsedHash.current.realTech);
 	return (
 		<div className={classes.container}>
 			<Banner />
 			<div className={classes.resultCardContainer}>
 				<GenericCard className={classes.resultCard}>
-					<ResultText text={text.current} {...{ classes }} />
+					<ResultText
+						text={text.current}
+						realName={realName.current}
+						realTech={realTech.current}
+						{...{ classes }}
+					/>
 					<ResultImages images={images.current} {...{ classes }} />
 					{text.current && (
 						<CopyLink {...{ hash, classes }} />
@@ -68,14 +71,25 @@ const ResultsComponent = ({ classes, match }) => {
 	);
 };
 
-const ResultText = ({ text, classes }) => {
+const ResultText = ({
+	text, realName, realTech, classes
+}) => {
 	if (!text || !classes) {
 		return 'Notre super algolithme semble avoir cessé de fonctionner : peut-être est-ce un bon présage ?';
 	}
 	return (
 		<div className={classes.result}>
-			<div className={classes.resultTitle}>
-				{"Découvrez votre meilleur message d'approche..."}
+			<div className={classes.resultHeader}>
+				<span className={classes.resultTitle}>
+					{"Découvrez votre meilleur message d'approche..."}
+				</span>
+				{realName && realTech && (
+					<>
+						<div className={classes.resultDestinatedTo}>
+							{`Destinée à ${realName} (Développeur·euse ${realTech})`}
+						</div>
+					</>
+				)}
 			</div>
 			{text.map(line =>
 				(!line
@@ -87,7 +101,7 @@ const ResultText = ({ text, classes }) => {
 };
 
 const CopyLink = ({ hash, classes }) => {
-	const url = useRef(`${ROOT_URL}/results/${hash}`);
+	const url = useRef(`${ROOT_URL}/result/${hash}`);
 	const handleCopy = useCallback((event) => {
 		const element = document.createElement('textarea');
 		element.value = url.current;

@@ -23,11 +23,8 @@ export default {
 		textAlign: 'justify',
 		color: '#2f2f2f'
 	},
-	resultTitle: {
-		fontSize: 28,
-		fontWeight: 700,
+	resultHeader: {
 		marginBottom: 60,
-		color: '#4f4f4f',
 		position: 'relative',
 		'&::after': {
 			position: 'absolute',
@@ -38,6 +35,16 @@ export default {
 			backgroundColor: '#dfdfdf',
 			content: "''"
 		}
+	},
+	resultTitle: {
+		fontSize: 28,
+		fontWeight: 700,
+		color: '#4f4f4f'
+	},
+	resultDestinatedTo: {
+		fontSize: 16,
+		color: '#3f3f3f',
+		marginTop: 7
 	},
 	images: {
 		marginTop: 30,
