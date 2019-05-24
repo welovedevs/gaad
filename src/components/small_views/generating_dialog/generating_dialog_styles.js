@@ -9,7 +9,7 @@ export default {
 	},
 	progressBarContainer: {
 		height: 40,
-		width: '95vw',
+		width: '100%',
 		maxWidth: 600,
 		position: 'relative',
 		overflow: 'hidden',

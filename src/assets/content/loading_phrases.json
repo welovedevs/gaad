@@ -1,7 +1,10 @@
 [
   "Notre algorithme de machine learning travaille...",
-  "Damien est un patron formidable",
-  "Vincent est un patron formidable",
-  "Thomas est gentil"
-
+  "Cette opération peut prendre un certain temps...",
+	"Démarrage des services tiers...",
+	"Ping des serveurs US-CENTRAL_1...",
+	"Création et formattage des données nécessaires...",
+	"Boot up du cluster de Raspberry Pi situé dans nos bureaux...",
+	"CPU Temp > 110° : Ventilation en cours...",
+	"Mise en service des containers dockers..."
 ]

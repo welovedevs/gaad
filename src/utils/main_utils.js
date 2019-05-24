@@ -3,6 +3,7 @@ import queryString from 'query-string';
 import bullshitNames from '../assets/content/bullshit_names.json';
 import bullshitData from '../assets/content/bullshit_data.json';
 import bullshitImages from '../assets/content/bullshit_images.json';
+import bullshitTechnologies from '../assets/content/bullshit_techs.json';
 
 const getRandomImageIndex = () => Math.floor(Math.random() * bullshitImages.length);
 
@@ -12,6 +13,12 @@ export const generateRandomHash = ({ name, technology }) => {
 	);
 	const randomName = namesWithExcludedName[
 		Math.floor(Math.random() * namesWithExcludedName.length)
+	];
+	const technologiesWithExcludedTech = bullshitTechnologies.filter(
+		currentTech => !technology || currentTech.toLowerCase() !== technology.toLowerCase()
+	);
+	const randomTechnology = technologiesWithExcludedTech[
+		Math.floor(Math.random() * technologiesWithExcludedTech.length)
 	];
 	const scenariosKeys = Object.keys(bullshitData);
 	const randomScenario = scenariosKeys[Math.floor(Math.random() * scenariosKeys.length)];
@@ -26,7 +33,7 @@ export const generateRandomHash = ({ name, technology }) => {
 		queryString.stringify({
 			name: randomName,
 			scenarioId: randomScenario,
-			technology,
+			technology: randomTechnology,
 			images: randomImagesIndexes
 		}, { arrayFormat: 'comma' })
 	);

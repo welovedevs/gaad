@@ -56,10 +56,15 @@ export default {
 		animation: 'fade-in-translate-low 1500ms',
 		animationFillMode: 'forwards'
 	},
+	copyLinkTextField: {
+		marginTop: '50px !important',
+		width: '100%'
+	},
 	shareIcons: {
 		width: '100%',
 		display: 'flex',
 		justifyContent: 'center',
+		flexWrap: 'wrap',
 		marginTop: 30,
 		'& > *': {
 			margin: 10

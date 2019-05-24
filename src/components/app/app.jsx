@@ -6,6 +6,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import injectSheet from 'react-jss';
 
 import CommonRoutes from '../routes/common_routes';
+import ForkOnGithubSnackbar from '../small_views/fork_on_github_snackbar/fork_on_github_snackbar';
 
 import {
 	setWidth as setWidthAction
@@ -58,11 +59,14 @@ const App = ({
 	}, []);
 
 	return (
-		<Router>
-			<>
+		<>
+			<Router>
+				<>
 					<CommonRoutes />
-			</>
-		</Router>
+				</>
+			</Router>
+			<ForkOnGithubSnackbar />
+		</>
 	);
 }
 

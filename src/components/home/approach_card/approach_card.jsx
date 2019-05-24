@@ -46,14 +46,14 @@ const ApproachCard = ({ classes }) => {
 				<TextField
 					fullWidth
 					className={classes.textField}
-					label="Prénom"
+					label="Prénom de votre futur talent"
 					value={name}
 					onChange={event => setName(event.target.value)}
 				/>
 				<TextField
 					fullWidth
 					className={classes.textField}
-					label="Technology"
+					label="Technologie à mentionner"
 					value={technology}
 					onChange={event => setTechnology(event.target.value)}
 				/>

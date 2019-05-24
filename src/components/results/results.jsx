@@ -4,10 +4,15 @@ import { withRouter } from 'react-router-dom';
 import injectSheet from 'react-jss';
 import queryString from 'query-string';
 
-import { TwitterOutline, FacebookFill, LinkedinFill } from '@ant-design/icons';
+import {
+	TwitterOutline, FacebookFill, LinkedinFill, CopyOutline
+} from '@ant-design/icons';
 import AntdIcon from '@ant-design/icons-react';
 
 import Button from '@material-ui/core/Button';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import TextField from '@material-ui/core/TextField';
+import IconButton from '@material-ui/core/IconButton';
 
 import Banner from '../home/banner/banner';
 import GenericCard from '../small_views/generic_card/generic_card';
@@ -26,31 +31,22 @@ const getSocialLink = (type, hash) => {
 		return `https://www.facebook.com/sharer.php?s=100&p[url]=${ROOT_URL}/results/${hash}&p[title]=${encodeURIComponent('Je viens de créer ma meilleur approche développeur !')}`;
 	case 'linkedin':
 		return `https://www.linkedin.com/sharing/share-offsite/?${queryString.stringify({ url: `${ROOT_URL}/results/${hash}` })}`;
+	default: return null;
 	}
 }
 
 const ResultsComponent = ({ classes, match }) => {
-	const getText = useCallback(
-		() => {
-			const {
-				params: { hash }
-			} = match;
-			return generateScenarioWithValues(queryString.parse(atob(hash)));
-		},
-		[match && match.params && match.params.hash]
-	);
-	const getImages = useCallback(
-		() => {
-			const {
-				params: { hash }
-			} = match;
-			const parsed = queryString.parse(atob(hash), { arrayFormat: 'comma' });
-			return parsed && parsed.images && getImagesLinks({ imagesArray: parsed.images });
-		},
-		[match && match.params && match.params.hash]
-	);
-	const text = useRef(getText());
-	const images = useRef(getImages());
+	const getText = useCallback(hash => hash && generateScenarioWithValues(queryString.parse(atob(hash))));
+	const getImages = useCallback((hash) => {
+		if (!hash) {
+			return null;
+		}
+		const parsed = queryString.parse(atob(hash), { arrayFormat: 'comma' });
+		return parsed && parsed.images && getImagesLinks({ imagesArray: parsed.images });
+	});
+	const hash = match && match.params && match.params.hash;
+	const text = useRef(getText(hash));
+	const images = useRef(getImages(hash));
 	return (
 		<div className={classes.container}>
 			<Banner />
@@ -58,6 +54,9 @@ const ResultsComponent = ({ classes, match }) => {
 				<GenericCard className={classes.resultCard}>
 					<ResultText text={text.current} {...{ classes }} />
 					<ResultImages images={images.current} {...{ classes }} />
+					{text.current && (
+						<CopyLink {...{ hash, classes }} />
+					)}
 					<ShareIcons
 						text={text.current}
 						hash={match && match.params && match.params.hash}
@@ -86,6 +85,51 @@ const ResultText = ({ text, classes }) => {
 		</div>
 	);
 };
+
+const CopyLink = ({ hash, classes }) => {
+	const url = useRef(`${ROOT_URL}/results/${hash}`);
+	const handleCopy = useCallback((event) => {
+		const element = document.createElement('textarea');
+		element.value = url.current;
+		element.setAttribute('readonly', '');
+		Object.entries({
+			oapcity: 0,
+			pointerEvents: 'none'
+		}).forEach(([key, value]) => {
+			element.style[key] = value;
+		});
+		document.body.appendChild(element);
+		element.select();
+		document.execCommand('copy');
+		document.body.removeChild(element);
+	});
+	if (!hash || !classes) {
+		return null;
+	}
+	return (
+		<TextField
+			className={classes.copyLinkTextField}
+			variant="outlined"
+			type="text"
+			label="Partager cette magnifique approche"
+			value={url.current}
+			InputProps={{
+				endAdornment: (
+					<InputAdornment position="end">
+						<IconButton
+							edge="end"
+							onClick={handleCopy}
+						>
+							<AntdIcon
+								type={CopyOutline}
+							/>
+						</IconButton>
+					</InputAdornment>
+				)
+			}}
+		/>
+	);
+}
 
 const ResultImages = ({ images, classes }) => {
 	if (!images || images.length < 1 || !classes) {
