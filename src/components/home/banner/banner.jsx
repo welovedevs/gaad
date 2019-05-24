@@ -10,12 +10,14 @@ import styles from './banner_styles';
 
 const Banner = ({ classes, small }) => (
 	<div className={cs(small ? classes.small : null, classes.container)} key="banner">
-		<img
-			src={BackgroundImage}
-			alt="Overbusiness"
-		/>
 		<Title {...{ classes }} />
 		<SubTitle {...{ classes }} />
+			<div className={classes.picture}>
+				<img
+					src={BackgroundImage}
+					alt="Overbusiness"
+				/>
+			</div>
 	</div>
 );
 

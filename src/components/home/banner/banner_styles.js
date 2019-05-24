@@ -2,11 +2,23 @@ export default ({
 	container: {
 		height: 450,
 		width: '100%',
-		position: 'relative',
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
 		padding: [70, 50, 50],
+		position: 'relative',
+		'&, & > *:not($picture)': {
+			zIndex: 1
+		}
+	},
+	picture: {
+		zIndex: 0,
+		height: 'calc(100% + 70px)',
+		width: '100%',
+		position: 'absolute',
+		top: -70,
+		left: 0,
+		transform: 'skewY(-4deg)',
 		'& > img': {
 			height: '100%',
 			width: '100%',
@@ -24,9 +36,6 @@ export default ({
 			backgroundImage: 'linear-gradient(to right top, rgb(17, 90, 117), rgb(42, 115, 142), rgb(67, 140, 167), rgb(92, 165, 192), rgb(117, 190, 217))',
 			opacity: 0.8,
 			content: "''"
-		},
-		'& > *:not(img)': {
-			zIndex: 1
 		}
 	},
 	title: {
