@@ -85,5 +85,8 @@ export default {
 	},
 	socialIcon: {
 		marginRight: 10
+	},
+	button: {
+		marginTop: 20
 	}
 };

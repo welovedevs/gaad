@@ -10,7 +10,7 @@ import styles from './values_propositions_styles';
 
 const columns = [
 	{
-		title: 'Faite bonne impression',
+		title: 'Faites bonne impression',
 		description: 'Les chercheurs américains sont formels : Ils est extrèmement important de faire une bonne première impression pour recruter. Nous avons étudié les développeurs plusieurs années pour concevoir ce générateur basé sur du machine learning.',
 		icon: <AntdIcon type={SearchOutline} />
 	},

@@ -1,5 +1,5 @@
 import React, { useCallback, useRef } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 import injectSheet from 'react-jss';
 import queryString from 'query-string';
@@ -10,9 +10,11 @@ import {
 import AntdIcon from '@ant-design/icons-react';
 
 import Button from '@material-ui/core/Button';
+
 import InputAdornment from '@material-ui/core/InputAdornment';
 import TextField from '@material-ui/core/TextField';
 import IconButton from '@material-ui/core/IconButton';
+import ButtonCTA from '../small_views/button/button';
 
 import Banner from '../home/banner/banner';
 import GenericCard from '../small_views/generic_card/generic_card';
@@ -65,6 +67,13 @@ const ResultsComponent = ({ classes, match }) => {
 						hash={match && match.params && match.params.hash}
 						{...{ classes }}
 					/>
+					<Link to="/">
+						<ButtonCTA
+							className={classes.button}
+						>
+							{'Générer une nouvelle approche'}
+						</ButtonCTA>
+					</Link>
 				</GenericCard>
 			</div>
 		</div>
@@ -125,7 +134,7 @@ const CopyLink = ({ hash, classes }) => {
 			className={classes.copyLinkTextField}
 			variant="outlined"
 			type="text"
-			label="Partager cette magnifique approche"
+			label="Partager cette approche"
 			value={url.current}
 			InputProps={{
 				endAdornment: (
@@ -176,6 +185,7 @@ const ShareIcons = ({ text, hash, classes }) => {
 				<Button
 					color="primary"
 					variant="outlined"
+					F
 				>
 					<AntdIcon
 						className={classes.socialIcon}
