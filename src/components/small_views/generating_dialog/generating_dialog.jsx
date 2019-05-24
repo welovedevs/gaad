@@ -37,18 +37,18 @@ const GeneratingDialog = ({
 		() => {
 			if (!open || progress === 100) return;
 			const tick = () => {
-				const time = (Math.floor(Math.random() * 25) + 10) * 100;
+				const time = (Math.floor(Math.random() * 25) + 10) * 30;
 				const newProgress = Math.min(
 					100,
 					progress + Math.floor(Math.random() * 40) + 1
 				);
-				if (newProgress === 100) {
+				if (newProgress >= 100) {
 					setProgress(100);
 					setPhrase('Nous avons trouvé votre approche parfaite !');
 					const hash = generateRandomHash({ name, technology });
 					return setTimeout(() => {
 						history.push(`/result/${hash}`);
-					}, 3000);
+					}, 2000);
 				}
 				setTimeout(() => {
 					setProgress(newProgress);
@@ -74,7 +74,7 @@ const GeneratingDialog = ({
 			}}
 		>
 			<DialogTitle>
-				{'Notre algolithme travaille, celà peut prendre un certain temps...'}
+				{'Notre algorithme travaille, celà peut prendre un certain temps...'}
 			</DialogTitle>
 			<DialogContent className={classes.content}>
 				<div className={classes.progressBarContainer}>

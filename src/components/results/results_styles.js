@@ -4,10 +4,22 @@ export default {
 		width: '100%',
 		display: 'flex',
 		justifyContent: 'center',
+		flexDirection: 'column',
+		alignItems: 'center',
 		zIndex: 1,
 		position: 'relative',
 		animation: 'fade-in-translate 1.5s',
-		marginBottom: 120
+		marginBottom: 120,
+	},
+	whyCard: {
+		width: '90%',
+		maxWidth: 800,
+		padding: [30, 40, 50],
+		display: 'flex',
+		justifyContent: 'center',
+		alignItems: 'center',
+		flexWrap: 'wrap',
+		marginTop: 60
 	},
 	resultCard: {
 		minHeight: 400,

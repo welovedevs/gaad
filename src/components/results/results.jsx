@@ -75,7 +75,13 @@ const ResultsComponent = ({ classes, match }) => {
 						</ButtonCTA>
 					</Link>
 				</GenericCard>
+				<GenericCard className={classes.whyCard}>
+					<WhyText
+						{...{ classes }}
+					/>
+				</GenericCard>
 			</div>
+
 		</div>
 	);
 };
@@ -108,6 +114,36 @@ const ResultText = ({
 		</div>
 	);
 };
+
+
+const WhyText = ({ classes }) => (
+	<div className={classes.result}>
+		<div className={classes.resultHeader}>
+			<span className={classes.resultTitle}>
+				{"Mais qu'est-ce que c'est ?"}
+			</span>
+		</div>
+		<div>
+			<div>
+				{'Ce message vous laisse perplexe ? Nous aussi !'}
+			</div>
+			<br />
+			<div>
+				{"Nous pensons que les annonces anonymes n'apportent aucune valeur aux développeurs. "}
+				{"C'est pourquoi il n'y a pas de recruteurs ou de cabinets de recrutement sur WeLoveDevs.com"}
+			</div>
+			<br />
+			<div>
+				{"80% des messages d'approche sont approuvés par les développeurs. Parce que les recruteurs qui travaillent sur WeLoveDevs.com mettent à votre disposition des pages entreprises pour que vous puissiez découvrir ce que c'est vraiment de travailler avec eux."}
+			</div>
+			<br />
+			<div>
+				{"Pas besoin de s'inscrire pour les découvrir sur "}
+				<a href="https://welovedevs.com/app/fr/discover">welovedevs.com</a>
+			</div>
+		</div>
+	</div>
+);
 
 const CopyLink = ({ hash, classes }) => {
 	const url = useRef(`${ROOT_URL}/result/${hash}`);
