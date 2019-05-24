@@ -12,7 +12,7 @@ import Button from '@material-ui/core/Button';
 import Banner from '../home/banner/banner';
 import GenericCard from '../small_views/generic_card/generic_card';
 
-import { generateScenarioWithValues } from '../../utils/main_utils';
+import { generateScenarioWithValues, getImagesLinks } from '../../utils/main_utils';
 
 import styles from './results_styles';
 
@@ -20,8 +20,12 @@ const ROOT_URL = 'https://gaad.welovedevs.com';
 
 const getSocialLink = (type, hash) => {
 	switch (type) {
-		case 'twitter':
-			return `https://www.twitter.com/home?${queryString.stringify({ status: `Je viens de créer ma meilleur approche développeur ! ${ROOT_URL}/results/${hash}` })}`
+	case 'twitter':
+		return `https://www.twitter.com/home?${queryString.stringify({ status: `Je viens de créer ma meilleur approche développeur ! ${ROOT_URL}/results/${hash}` })}`;
+	case 'facebook':
+		return `https://www.facebook.com/sharer.php?s=100&p[url]=${ROOT_URL}/results/${hash}&p[title]=${encodeURIComponent('Je viens de créer ma meilleur approche développeur !')}`;
+	case 'linkedin':
+		return `https://www.linkedin.com/sharing/share-offsite/?${queryString.stringify({ url: `${ROOT_URL}/results/${hash}` })}`;
 	}
 }
 
@@ -40,8 +44,8 @@ const ResultsComponent = ({ classes, match }) => {
 			const {
 				params: { hash }
 			} = match;
-			const parsed = queryString.parse(atob(hash));
-			return parsed && parsed.images;
+			const parsed = queryString.parse(atob(hash), { arrayFormat: 'comma' });
+			return parsed && parsed.images && getImagesLinks({ imagesArray: parsed.images });
 		},
 		[match && match.params && match.params.hash]
 	);
@@ -121,26 +125,30 @@ const ShareIcons = ({ text, hash, classes }) => {
 					{'Twitter'}
 				</Button>
 			</a>
-			<Button
-				color="primary"
-				variant="outlined"
-			>
-				<AntdIcon
-					className={classes.socialIcon}
-					type={FacebookFill}
-				/>
-				{'Facebook'}
-			</Button>
-			<Button
-				color="primary"
-				variant="outlined"
-			>
-				<AntdIcon
-					className={classes.socialIcon}
-					type={LinkedinFill}
-				/>
-				{'LinkedIn'}
-			</Button>
+			<a href={getSocialLink('facebook', hash)}>
+				<Button
+					color="primary"
+					variant="outlined"
+				>
+					<AntdIcon
+						className={classes.socialIcon}
+						type={FacebookFill}
+					/>
+					{'Facebook'}
+				</Button>
+			</a>
+			<a href={getSocialLink('linkedin', hash)}>
+				<Button
+					color="primary"
+					variant="outlined"
+				>
+					<AntdIcon
+						className={classes.socialIcon}
+						type={LinkedinFill}
+					/>
+					{'LinkedIn'}
+				</Button>
+			</a>
 		</div>
 	);
 }

@@ -4,7 +4,7 @@ import bullshitNames from '../assets/content/bullshit_names.json';
 import bullshitData from '../assets/content/bullshit_data.json';
 import bullshitImages from '../assets/content/bullshit_images.json';
 
-const getRandomImage = () => bullshitImages[Math.floor(Math.random() * bullshitImages.length)];
+const getRandomImageIndex = () => Math.floor(Math.random() * bullshitImages.length);
 
 export const generateRandomHash = ({ name, technology }) => {
 	const namesWithExcludedName = bullshitNames.filter(
@@ -15,31 +15,29 @@ export const generateRandomHash = ({ name, technology }) => {
 	];
 	const scenariosKeys = Object.keys(bullshitData);
 	const randomScenario = scenariosKeys[Math.floor(Math.random() * scenariosKeys.length)];
-	const randomImages = [...new Array(3).fill()].reduce((acc) => {
-		let randomImage = getRandomImage();
-		while (acc.includes(randomImage)) {
-			randomImage = getRandomImage();
+	const randomImagesIndexes = [...new Array(3).fill()].reduce((acc) => {
+		let randomImageIndex = getRandomImageIndex();
+		while (acc.includes(randomImageIndex)) {
+			randomImageIndex = getRandomImageIndex();
 		}
-		return [...acc, randomImage]
+		return [...acc, randomImageIndex]
 	}, []);
 	return btoa(
 		queryString.stringify({
 			name: randomName,
 			scenarioId: randomScenario,
 			technology,
-			images: randomImages
-		})
+			images: randomImagesIndexes
+		}, { arrayFormat: 'comma' })
 	);
 };
 
 export const generateScenarioWithValues = ({ scenarioId, name, technology }) => {
-	console.log({ scenarioId, name, technology });
 	const scenario = bullshitData[scenarioId];
 	if (!scenario) {
 		return null;
 	}
 	const { text } = scenario;
-	console.log({ text });
 	const replacements = {
 		replaceName: name,
 		tech: technology
@@ -48,3 +46,5 @@ export const generateScenarioWithValues = ({ scenarioId, name, technology }) => 
 	return text
 		.map(line => replacementsEntries.reduce((str, [key, value]) => str.replace(new RegExp(`{${key}}`, 'g'), value), line));
 }
+
+export const getImagesLinks = ({ imagesArray }) => imagesArray && imagesArray.map(imageIndex => bullshitImages[imageIndex]);
