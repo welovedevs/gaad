@@ -16,6 +16,6 @@ export default ({
 		zIndex: 1,
 		position: 'relative',
 		animation: 'fade-in-translate 1.5s',
-		marginBottom: 120
+		marginBottom: 90
 	}
 });
