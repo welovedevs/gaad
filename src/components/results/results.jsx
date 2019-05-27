@@ -134,11 +134,11 @@ const WhyText = ({ classes }) => (
 			</div>
 			<br />
 			<div>
-				{"80% des messages d'approche sont approuvés par les développeurs. Parce que les recruteurs qui travaillent sur WeLoveDevs.com mettent à votre disposition des pages entreprises pour que vous puissiez découvrir ce que c'est vraiment de travailler avec eux."}
+				{'Les entreprises qui recrutent sur WeLoveDevs.com font bien mieux que cela ! Elles vous proposent du contenu original et authentique pour que vous puissiez vraiment vous projeter au sein de leurs équipes.'}
 			</div>
 			<br />
 			<div>
-				{"Pas besoin de s'inscrire pour les découvrir sur "}
+				{"Pas besoin de s'inscrire, c'est ici pour les découvrir: "}
 				<a href="https://welovedevs.com/app/fr/discover">welovedevs.com</a>
 			</div>
 		</div>
