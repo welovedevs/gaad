@@ -1,7 +1,8 @@
 import queryString from 'query-string';
 
 import bullshitNames from '../assets/content/bullshit_names.json';
-import bullshitData from '../assets/content/bullshit_data.json';
+import bullshitData
+	from '../assets/content/bullshit_data.json';
 import bullshitImages from '../assets/content/bullshit_images.json';
 import bullshitTechnologies from '../assets/content/bullshit_techs.json';
 
