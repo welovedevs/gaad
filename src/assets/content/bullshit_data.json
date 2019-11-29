@@ -100,5 +100,46 @@
 			"",
 			"[Votre Nom]"
 		]
+	},
+	"scenario7": {
+		"text": [
+			"/!\\ URGENT /!\\ /!\\ URGENT /!\\",
+			"",
+			"Bonjour, {replaceName},",
+			"",
+			"Votre expérience dans le digital est impressionante !",
+			"",
+			"J'ai vu que vous avez cité {tech} en bas de votre profil LinkedIn, vous devez donc forcément être l'expert que mon client recherche EN URGENCE.",
+			"",
+			"Ce dernier, une start-up de la CyberTech spécialisée en numérisation de process digitaux et anonymes dans le domaine des médias alternatifs, vient de lever 5 M d'euros et cherche à soutenir sa très forte croissance. Vous pouvez les y aider !",
+			"Vous intégrerez une équipe de codeurs fullstack spécialisés en maintenance de code! Le PO est maître SCRUM et avec lui une seule règle: peu importe si tu es encore saoul de la veille tant que tu arrives à l'heure le matin. ",
+			"",
+			"J'ai trouvé votre numéro de téléphone par scraping donc je vous appelle immédiatement car l'opportunité est vraiment URGENTE !",
+			"",
+			"Cordialement",
+			"[Votre nom]",
+			"",
+			"/!\\ URGENT /!\\ /!\\ URGENT /!\\"
+		]
+	},
+	"scenario8": {
+		"text": [
+			"/!\\ URGENT /!\\ À PARTAGER À VOTRE RESEAU /!\\ URGENT /!\\",
+			"",
+			"Cher {replaceName}",
+			"",
+			"J'ai vu que vous étiez fortement à l'écoute du marché du coup j'ai une opportunité URGENTE de dev Ninja à vous proposer !",
+			"",
+			"Il me semble avoir aperçu [techno] sur votre profil linkedin, vous êtes donc forcément l'expert que mon client recherche depuis des mois ;)",
+			"Ce dernier est un éditeur de logiciel disruptif spécialisé en prestations numériques de digitalisation de contenu audio à destination des Pure-Players !",
+			"",
+			"Le package prévoit un SMIC + des parts BSPCE avec l'opportunité de devenir CTO ;) ! ",
+			"",
+			"Etant dans l'urgence la plus absolue, je vais vous appeller dans 10 min (j'ai trouvé votre numéro par scraping) afin d'échanger autour de ce poste de rêve !",
+			"",
+			"À tout de suite ;)",
+			"[Votre nom]",
+			"/!\\ URGENT /!\\ À PARTAGER À VOTRE RESEAU /!\\ URGENT /!\\"
+		]
 	}
 }

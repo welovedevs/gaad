@@ -120,26 +120,15 @@ const WhyText = ({ classes }) => (
 	<div className={classes.result}>
 		<div className={classes.resultHeader}>
 			<span className={classes.resultTitle}>
-				{"Mais qu'est-ce que c'est ?"}
+				{"Envie de plus ?"}
 			</span>
 		</div>
 		<div>
 			<div>
-				{'Ce message vous laisse perplexe ? Nous aussi !'}
+				{'Découvre nos autres sides projets (ou ta future boite) sur'}
 			</div>
-			<br />
 			<div>
-				{"Nous pensons que les annonces anonymes n'apportent aucune valeur aux développeurs. "}
-				{"C'est pourquoi il n'y a pas de recruteurs ou de cabinets de recrutement sur WeLoveDevs.com"}
-			</div>
-			<br />
-			<div>
-				{'Les entreprises qui recrutent sur WeLoveDevs.com font bien mieux que cela ! Elles vous proposent du contenu original et authentique pour que vous puissiez vraiment vous projeter au sein de leurs équipes.'}
-			</div>
-			<br />
-			<div>
-				{"Pas besoin de s'inscrire, c'est ici pour les découvrir: "}
-				<a href="https://welovedevs.com/app/fr/discover">welovedevs.com</a>
+				<a href="https://welovedevs.com/app/fr/fun">welovedevs.com 💙</a>
 			</div>
 		</div>
 	</div>
