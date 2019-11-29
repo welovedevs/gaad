@@ -1,7 +1,7 @@
 {
 	"scenario1": {
 		"text": [
-			"Cher/Chère {replaceName}, j'ai vu que vous étiez a l'écoute du marché.",
+			"Cher/Chère {replaceName}, j'ai vu que vous étiez à l'écoute du marché.",
 			"",
 			"Mon client, spécialiste du secteur très dynamique du retail est à la recherche de fullstack développeurs experts pour une gestion pointue de son SI.",
 			"",
@@ -29,7 +29,7 @@
 			"",
 			"Le poste de codeur fullstack sénior prévoit un salaire de 22K annuel et cela risque d'augmenter car on va peut-être lever des fonds d'ici un an ;)",
 			"",
-			"J'ai trouvé votre numéro de téléphone grâce à du webscrapping sur GitHub donc je vous appelle immediatement pour en discuter!",
+			"J'ai trouvé votre numéro de téléphone grâce à du webscrapping sur GitHub donc je vous appelle immédiatement pour en discuter!",
 			"",
 			"A tout de suite",
 			"[Votre nom]"
@@ -39,14 +39,14 @@
 		"text": [
 			"Bonjour {replaceName}",
 			"",
-			"Votre experience en numérique a fortement attiré mon attention !",
+			"Votre expérience en numérique a fortement attiré mon attention !",
 			"",
 			"J'ai vu que vous avez mentionné {tech} sur votre profil, vous devez donc forcément être l'expert que mon client recherche !",
 			"",
-			"Ce dernier, une start-up de la CyberTech spécialisée en numérisation de procesus anonymes digitaux dans le domaine des medias, vient de lever 8 M d'euros et cherche à soutenir sa très forte croissance.",
-			"Vous intégrerez une équipe de codeur Ninjas tous specialisés en fullstack ! Le CTO est d'ailleurs un lead Cobol reconnu par la communauté.",
+			"Ce dernier, une start-up de la CyberTech spécialisée en numérisation de procesus anonymes digitaux dans le domaine des médias, vient de lever 8 M d'euros et cherche à soutenir sa très forte croissance.",
+			"Vous intégrerez une équipe de codeurs Ninjas tous specialisés en fullstack ! Le CTO est d'ailleurs un lead Cobol reconnu par la communauté.",
 			"",
-			"Souhaitez vous échanger immédiatement ? Le poste est à pourvoir de toute urgence !",
+			"Souhaitez-vous échanger immédiatement ? Le poste est à pourvoir de toute urgence !",
 			"",
 			"Cordialement,",
 			"[Votre Nom]"
@@ -59,7 +59,7 @@
 			"Vos compétences en {tech} sont impressionantes et correspondent à ce que mon client recherche :)",
 			"",
 			"Il s'agit d'un job de rêve chez un éditeur reconnu, expert en digitalisation Omni-Canal dans le domaine de l'agriculture forestière ! Présent à l'international, mon client réalise un CA de +10M/an et compte aujourd'hui 140 salariés.",
-			"Ce poste de développeur Ninja Fullstack démarre à 22K€ mais présente des opportunités d'évolutions imbatable sur le marché ! Serez-vous leur prochain CTO dans 12 ans ? Cela ne tient qu'à vous !",
+			"Ce poste de développeur Ninja Fullstack démarre à 22K€ mais présente des opportunités d'évolutions imbattable sur le marché ! Serez-vous leur prochain CTO dans 12 ans ? Cela ne tient qu'à vous !",
 			"",
 			"J'espère que vous êtes à l'écoute du marché car je dois toucher ma commission au plus vite.",
 			"",
@@ -78,7 +78,7 @@
 			"",
 			"Les locaux sont idéalement situés (si vous avez une voiture) et il y a même un borne d'arcade rétro Street Fighter :D",
 			"",
-			"Dis moi que tu es à l'écoute du marché stp !",
+			"Dis-moi que tu es à l'écoute du marché stp !",
 			"",
 			"Cheers,",
 			"[Votre Nom]"
@@ -88,14 +88,14 @@
 		"text": [
 			"Bonjour !",
 			"",
-			"J'ai vu {tech} dans la liste des 37 languages informatiques que vous maitrisez et je me permet ainsi de vous contacter :)",
+			"J'ai vu {tech} dans la liste des 37 langages informatiques que vous maîtrisez et je me permets ainsi de vous contacter :)",
 			"",
 			"Cette expertise qui est la votre correspond parfaitement au poste de dev fullstack Rockstar junior à pourvoir chez mon client !",
 			"Ce dernier est une startup crowdfondée il y a 1 an, spécialisée en optimisation digitale de contenus numériques dediés à la jeunesse.",
 			"",
 			"En attente d'une levée de fonds importante, vous serez payés dans un premier temps en parts BSPCE extrêmement avantageuses !",
 			"",
-			"Appellons nous au plus vite ! ",
+			"Appelons-nous au plus vite ! ",
 			"",
 			"[Votre Nom]"
 		]
